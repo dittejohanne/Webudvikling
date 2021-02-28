@@ -55,14 +55,27 @@ const data = {
         break
         case "password":
           console.log("validate password");
-          let password_1 = document.getElementById("password")
-          let password_2 = document.getElementById("password_confirmed")
-
-          if(password_1.value === password_2.value) {
-            console.log("match");
-          } else {
-            console.log("no match");
-          }
+          let password_1 = document.getElementById("password").value
+          let password_2 = document.getElementById("password_confirmed").value
+          
+          // If password not entered 
+          if (password_1 == '') 
+              alert ("Please enter Password"); 
+                
+          // If confirm password not entered 
+          else if (password_2 == '') 
+              alert ("Please enter confirm password"); 
+                
+          // If Not same return False.     
+          else if (password_1 != password_2) { 
+            element.classList.add("error") 
+              return false; 
+          } 
+          // If same return True. 
+          else{ 
+              alert("Password Match: Welcome to GeeksforGeeks!") 
+              return true; 
+          } 
       }
     })
     items.push(input)
