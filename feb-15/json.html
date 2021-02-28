@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+/*         // JSON objevts not JS objects
+        // Double quote the keys
+        // key is the ID and the value can be a number, null, text, boolean
+        let user = {
+            "id": 1,
+            "name": "a"
+        }
+        // add a key-value to the user
+        user.last_name = "aa"
+        user.email = "@a"
+        //delete a key value from the user
+        delete user.last_name
+        // how do i update the name to x
+        user.name = "x"
+        console.log(user);
+ */
+        // //-------- add person one and two to people with PUSH
+        // let people = []
+        // let person_one = {"id":1, "name":"a"}
+        // let person_two = {"id":2, "name":"b"}
+
+        // people.push(person_one, person_two)
+
+
+        //update every person to have a key called (every means that you need to loop)
+        // created and the value is 0. The id
+        // and name staus intact
+
+        //-- FOR EACH
+        // people.forEach( person => person.created = 0 ) // for people take each person
+
+        //-- FOR OF
+        //for( const person of people) {person.created = 0}
+
+        //     //-- FOR EACH. Add a random age between 150 and 0
+        //      people.forEach( person => person.age = Math.floor(Math.random()*151) ) //age must be between 0 and 150
+
+        //     // calculate the average age of people and how it in the console
+        //     const total_people = people.length
+        //     console.log(total_people);
+        //   // loop throguh each person and get the age added to the toal
+        //     let total = 0
+        //     people.forEach( person => total = total + person.age)
+        //     console.log(total);
+        //     // calculate average
+        //     let average = total / total_people 
+        //     console.log(average);
+
+        //Update the name b to x
+        // people[1].name = "x"
+
+
+
+
+    // many, array -> loop
+    let people = []
+    let person_one =    {"id":1,"name":"a"}
+    let person_two =    {"id":2,"name":"x"}
+    let person_three =  {"id":3,"name":"c"}
+    // How to I add those 2 person to people?
+    people.push(person_one)
+    people.push(person_two)
+    people.push(person_three)
+    
+    // If the name is x you will show wow
+    for(let i = 0; i < people.length; i++){
+      if(people[i].name == "x"){
+        console.log(`User with id ${people[i].id} is called wow`)
+      }else{
+        console.log(`User with id ${people[i].id} is called ${people[i].name}`)
+      }
+    }
+
+    </script>
+</body>
+
+</html>

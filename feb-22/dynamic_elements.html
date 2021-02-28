@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="items">
+
+        <!-- <div id="test"> test me </div> -->
+
+        <div class="item">
+            <form onsubmit="return false">
+                <span>id</span> <span>1</span>
+                <span>name</span> <span>Johanne</span>
+                <button onclick="delete_item()">delete</button>
+            </form>
+
+        </div>
+
+        <div id="get_more_items" onclick="show_item()">Get more items</div>
+
+    </div>
+
+
+    <script>
+        const items = [{
+                "id": 5,
+                "name": "five"
+            },
+            {
+                "id": 6,
+                "name": "six"
+            },
+            {
+                "id": 7,
+                "name": "seven"
+            }
+        ]
+
+        function show_item() {
+            items.forEach(item => {
+                console.log("item here");
+                let div_item = `
+                    <div class="item">
+            <form onsubmit="return false">
+                <span>id</span> <span${item.id}></span>
+                <span>name</span> <span>${item.name}</span>
+                <button onclick="delete_item()">delete</button>
+            </form>
+        
+        </div>`
+
+        document.querySelector("#items").insertAdjacentHTML("beforeend", div_item)
+            })
+        }
+
+        function delete_item(){
+            console.log("item deleted");
+        }
+
+
+        // document.querySelector("#get_more_items").addEventListener("click", function () {
+        //     console.log("get_more_items");
+        //     //connect to the server
+        //     //get an array with json elements (items)
+        //     //createElement
+        //     //create an array with 3 items... each item is a json object
+        //     // Loop though the array and how those items
+
+
+        //         for (let i = 0; i < items.length; i++) {
+        //             var obj = items[i];
+        //             console.log(obj);
+
+        //         }
+
+
+
+        //         const item = `<div class="item">
+        //         <form onsubmit="return false">
+        //             <span>id</span> <span>1</span>
+        //             <span>name</span> <span>Johanne</span>
+        //             <button>delete</button>
+        //         </form>
+
+        //     </div>`
+
+        //     document.querySelector("#items").insertAdjacentHTML("beforeend", item)
+        //     addEvents() // This will re-generetae the listener, so now you have two 
+        // })
+
+        //     function addEvents(){
+
+        //         document.querySelectorAll("button").forEach(button => {
+        //             button.addEventListener("click", function () {
+        //                 console.log("button clicked");
+        //             })
+        //         })
+        //     }
+        //     addEvents()
+    </script>
+
+</body>
+
+</html>

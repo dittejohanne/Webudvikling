@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .dot {
+        height: 25px;
+        width: 25px;
+        background-color: #bbb;
+        border-radius: 50%;
+        margin: 2%;
+        display: block;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .yellow {
+        background-color: yellow;
+    }
+
+    .green {
+        background-color: green;
+    }
+</style>
+
+<body>
+
+
+
+    <button onclick="start()">
+        start
+    </button>
+    <button onclick="stop()">
+        stop
+    </button>
+
+    <div>
+        <span id="red_light" class="dot"></span>
+        <span id="yellow_light" class="dot"></span>
+        <span id="green_light" class="dot"></span>
+    </div>
+
+    <script>
+
+        function start() {
+            document.querySelector("#red_light").classList.add("red")
+            document.querySelector("#yellow_light").classList.remove("yellow")
+            setTimeout(turn_yellow, 5000)
+        }
+
+        function turn_yellow() {
+            document.querySelector("#yellow_light").classList.add("yellow")
+            setTimeout(turn_green, 2000)
+        }
+
+        function turn_green() {
+            document.querySelector("#red_light").classList.remove("red")
+            document.querySelector("#yellow_light").classList.remove("yellow")
+            document.querySelector("#green_light").classList.add("green")
+            setTimeout(turn_red, 5000)
+        }
+
+        function turn_red() {
+            document.querySelector("#green_light").classList.remove("green")
+            document.querySelector("#yellow_light").classList.add("yellow")
+            setTimeout(start, 2000)
+        }
+
+        // function stop(){
+        //     clearInterval(timer)
+        // }
+
+
+        // if you want something to happen all the time
+
+        // let timer
+
+        // function start() {
+        //     timer = setInterval(turn_red, 1000)
+
+        // }
+
+        // function stop() {
+        //     clearInterval(timer)
+        // }
+
+        // function turn_red() {
+        //     document.querySelector("#red").classList.add("red")
+        // }
+
+        // let timer
+        // function start() {
+        //    timer = setInterval(get_chat_messages, 1000)
+
+        // }
+
+        // function stop(){
+        //     clearInterval(timer)
+        // }
+
+        // function get_chat_messages() {
+        //     console.log("get chat messages");
+        // }
+        // setInterval( get_chat_messages, 1000)
+
+        // function get_chat_messages(){
+        //     console.log("get chat messages");
+        // }
+
+        // setInterval( () =>{
+        //     console.log("getting chat messages");
+        // }, 1000)
+
+        // setInterval( function(){
+        //     console.log("getting chat messages");
+        // }, 1000)
+    </script>
+
+
+</body>
+
+</html>

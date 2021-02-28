@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edgde">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<!--     <div id="labelFirstName"> Johanne</div>
+    <div id="labelLastName"> Justesen </div>
+
+
+    <button onclick="hideFirstName()">Hide first name</button>
+    <button onclick="hideLastName()">Hide last name</button>
+    <button onclick="showFirstNameOrLastName('name')">Show first name</button>
+    <button onclick="showFirstNameOrLastName('last name')">Show last name</button>
+     -->
+
+    <div id="label_name"> Johanne</div>
+    <div id="label_last_name"> Justesen </div>
+
+
+     <button onclick="show_hide('hide','label_name')">Hide first name</button>
+    <button onclick="show_hide('hide','label_last_name')">Hide last name</button> 
+    <button onclick="show_hide('show','label_name')">Show first name</button>
+    <button onclick="show_hide('show','label_last_name')">Show last name</button>
+    
+    <p><button onclick="myFunction()">Click Me</button></p>
+
+    <div id="myDIV">Hello</div>
+
+    <script>
+  
+        // PATTERNS
+        function show_hide(action, name_or_last_name){
+            if(action == "show"){
+            document.getElementById(name_or_last_name).classList.remove("hide")
+            } else {
+                document.getElementById(name_or_last_name).classList.add("hide")
+            }
+        }
+    
+
+
+    /*     function hide_name(){
+            document.querySelector("#label_name").classList.add("hide")
+            
+        }
+
+        function hide_last_name(){
+            document.querySelector("#label_last_name").classList.add("hide")
+            
+        } */
+
+       /*  function showFirstNameOrLastName(nameOrLastName){
+            if(nameOrLastName == "name") {
+                console.log("show the name");
+                document.querySelector("#labelFirstName").classList.remove("hide")
+            }else{
+                console.log("show the last name");
+                document.querySelector("#labelLastName").classList.remove("hide")
+            }
+            
+        }
+
+        function hideFirstName(){
+            document.querySelector("#labelFirstName").classList.add("hide")
+            
+        }
+
+        function hideLastName(){
+            document.querySelector("#labelLastName").classList.add("hide")
+            
+        } */
+
+        
+/*         function hideFirstName(){
+            document.querySelector("#labelFirstName").classList.add("hide")
+            
+        }
+
+        function hideLastName(){
+            document.querySelector("#labelLastName").classList.add("hide")
+            
+        }
+
+        function showFirstName(){
+            document.querySelector("#labelFirstName").classList.remove("hide")
+            
+        }
+        function showLastName(){
+            document.querySelector("#labelLastName").classList.remove("hide")
+            
+        } 
+        
+        // document.getElementById("label_name")
+        //document.querySelector("#label_name").style.display = "none"
+      // document.querySelector("#labelName").classList.remove("hide")
+        */
+    </script>
+</body>
+</html>

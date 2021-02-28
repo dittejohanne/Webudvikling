@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="users"></div>
+
+    <script>
+        const users = [{
+                "id": 1,
+                "name": "a"
+            },
+            {
+                "id": 2,
+                "name": "b"
+            },
+            {
+                "id": 3,
+                "name": "c"
+            }
+        ]
+
+        // If you need to use "this" make sure you are inside
+        // a JS object and using a funtion
+
+        const user = {
+            "show_users": function () {
+                users.forEach(user => {
+                    const div_user = `
+                <div class"user">
+                    <span>id</span> <span> ${user.id}</span>
+                    <span>name</span> <span>${user.name}</span>
+                    <button onclick="user.delete()">delete</button>
+                </div>           `
+                    one("#users").insertAdjacentHTML("beforeend", div_user)
+                })
+            },
+            "delete" : function () {
+                // console.log("delete user", user_id);
+                // console.log(event.target); // which element triggers this . Target who own the event
+                //event.target is the button
+                ///parentNode is "users"
+                event.target.parentNode.remove()
+            }
+        }
+
+        user.show_users()
+
+        function one(selector) {
+            return document.querySelector(selector)
+        } // get whateever the documentselector gives to me }
+        function all(selector) {
+            return document.querySelectorAll(selector)
+        }
+    </script>
+
+</body>
+
+</html>

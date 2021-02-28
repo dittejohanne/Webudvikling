@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Dimension Arrays</title>
+</head>
+<body>
+ 
+<script>
+//  //                    ----0----       ----1----   
+//  //                    0      1         0      1 
+// const students = [     ["a","aa"]  ,  ["b", "bb"]    ]
+// console.log(students[1][1]);
+
+const students = [
+    ["a","aa", 1],
+    ["b", "bb", 2],
+    ["Johanne", "cc", 3]  
+]
+
+students[2][2] = 4 // go til element and assign
+
+//-------------- get the specific name and age in the array
+// const name = students[2][0]
+// const age = students[2][2]
+// console.log("Hi, my name is "+name+" and I am  "+age+" years old");
+
+//-------------- get the last name of each students
+// for(student of students){
+//     console.log(student[1]);}
+
+// ------------- LÆG ALLE ALDRE SAMMEN AF VARIABLE STUDENTS
+// let total = 0
+// for(let i = 0; i <students.length; i++){
+// total += students[i][2]
+// }
+// console.log(total);
+
+// let total = 0 
+// for(const student of students) {
+//     total += student[2]
+// }
+// console.log(total);
+
+// ------------ FOREACH
+// let total = 0 
+// students.forEach(function(student){ // go inside of the student and take each of student and put it inside af variable
+//     total += student[2]
+// })
+
+// console.log(total);
+
+// // ---------- FOREACH arrow function
+// let total = 0 
+// students.forEach(student => { //arrow function
+//     total += student[2]
+// })
+
+// console.log(total);
+
+</script>
+    
+</body>
+</html>

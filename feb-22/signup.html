@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Signup</title>
+</head>
+
+<body>
+
+    <form onsubmit="data.validate(); return false">
+        <!-- will not reload the page -->
+        <div>
+            <div>
+                name <span class="soft"> (2 max 4 characters)</span>
+            </div>
+            <input  id="name" onclick="clear_error()" type="text" placeholder="name" maxlength="4" data-validate="str" data-min="2" data-max="4">
+        </div>
+
+        <div>
+            <div>
+                last name <span class="soft"> (2 max 4 characters)</span>
+            </div>
+            <input id="last_name" onclick="clear_error()" type="text" placeholder="last name" maxlength="4" data-validate="str" data-min="2"
+                data-max="4">
+        </div>
+
+        <div>
+            <div>
+                phone <span class="soft"> (8 digits)</span>
+            </div>
+            <input id="phone" onclick="clear_error()" type="text" placeholder="last name" maxlength="8" data-validate="int" data-min="10000000"
+                data-max="99999999">
+        </div>
+
+        <div>
+            <div>
+                email <span class="soft"> (@)</span>
+            </div>
+            <input id="email" onclick="clear_error()" type="text" placeholder="email" maxlength="50" data-validate="email">
+        </div>
+
+        <div>
+            <div >
+                password <span class="soft"> (8 max 50 characters)</span>
+            </div>
+            <input id="password" onclick="clear_error()" type="text" placeholder="password" data-validate="str" data-min="8" data-max="50">
+        </div>
+
+        <div>
+            <div >
+                password <span class="soft"> (8 max 50 characters)</span>
+            </div>
+            <input id="password_confirmed" onclick="clear_error()" type="text" placeholder="password" data-validate="password" data-min="8" data-max="50">
+        </div>
+
+        <button>signup</button>
+    </form>
+
+    <script src="validator.js"></script>
+</body>
+
+</html>

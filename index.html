@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="appindex.css">
+</head>
+
+<body>
+    <div id="users">
+
+        <div class="user">
+            <div class="user_button_collumn">
+                <div class="user_name" id="user_one_name">1</div>
+                <div class="user_lastname" id="user_one_lastname">a</div>
+                <div class="user_email" id="user_one_email">a</div>
+            </div>
+
+            <div class="user_button_collumn">
+                <button data-button_number="1" onclick="show_hide('user_one_name', this)">Show/Hide</button>
+                <button data-button_number="2" onclick="show_hide('user_one_lastname', this)">Show/Hide</button>
+                <button data-button_number="3" onclick="show_hide('user_one_email', this)">Show/Hide</button>
+            </div>
+        </div>
+
+        <div class="user">
+
+            <div class="user_button_collumn">
+                <div class="user_name" id="user_two_name">2</div>
+                <div class="user_lastname" id="user_two_lastname">b</div>
+                <div class="user_email" id="user_two_email">b</div>
+            </div>
+
+            <div class="user_button_collumn">
+                <button data-button_number="5" onclick="show_hide('user_two_name', this)">Show/Hide</button>
+                <button data-button_number="4" onclick="show_hide('user_two_lastname', this)">Show/Hide</button>
+                <button data-button_number="6" onclick="show_hide('user_two_email', this)">Show/Hide</button>
+            </div>
+        </div>
+
+        <div class="user">
+            <div class="user_button_collumn">
+                <div class="user_name" id="user_three_name">3</div>
+                <div class="user_lastname" id="user_three_lastname">c</div>
+                <div class="user_email" id="user_three_email">c</div>
+            </div>
+            <div class="user_button_collumn">
+                <button data-button_number="7" onclick="show_hide('user_three_name', this)">Show/Hide</button>
+                <button data-button_number="8" onclick="show_hide('user_three_lastname', this)">Show/Hide</button>
+                <button data-button_number="9" onclick="show_hide('user_three_email', this)">Show/Hide</button>
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+        function show_hide(name, button) {
+            console.log(button.dataset.button);
+            const parent = button.parentNode; // parentNode = selector in JS, dataset, now look at the parent "user_button_collumn" of the specifed node. 
+            const Otherbuttons = parent.querySelectorAll(`[data-button_number]:not([data-button_number='${button.dataset.button_number}'])`); 
+            //works now only in the parent. [elements with attribute name] css selector. fetcing every button inside the parent elements excpet the one i just clicked
+            
+            Otherbuttons.forEach((e) => { // go through the button with for each, you are telling them that each button is e
+                e.classList.toggle("PointNo");
+            }
+            )
+
+
+            document.querySelector(`#${name}`).classList.toggle("hide");
+        }
+    </script>
+
+</body>
+
+</html>

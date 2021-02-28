@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div id="users">
+
+            <!-- <div id="test"> test me </div> -->
+
+            <button onclick="user.show()">create</button>
+    
+    </div>
+
+    <script>
+        const user = {
+            "id": 1,
+            "name": "a",
+            "show": function () {
+                let div_user = ` 
+                <div class="user">
+         <form onsubmit="return false">
+         <span>id</span> <span> ${this.id}</span>
+        <span>name</span> <span>${this.name}</span>
+        </form>
+        </div>`
+        one("#users").insertAdjacentHTML("beforeend", div_user)
+            }
+        }
+
+        // document.querySelector --- one
+        // document-wuerySelectorAll -- all
+        //Library - best ever library
+
+        function one(selector) { return document.querySelector(selector) }// get whateever the documentselector gives to me }
+        function all(selector){return document.querySelectorAll(selector)}
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // thousands of lines
+    // users, items, posts, likes, ... ... ... friends
+    // block, delete
+    // create an item, delete item, update item
+    // friend, unfriend, block
+    // unlike post, like post
+    // 50.000
+    
+    // json object and json objects
+    // JSOn double quotes around keys
+// value number, string, null, array, json
+// const user = {"id": 1, "name": "a"} // JSON object
+// const user_one = {id: 1, name: "a"} // JS object
+
+// JSON object cannot have function in it
+// JS object CAN have functions
+
+let user = { // looks like json but is JS object
+    id : 2,
+    "name": "b",
+    "show": function(){
+        const user_id = this.id // this point to the whole object. whatever you are inside
+        const user_name = this.name
+        console.log(`id ${user_id}, name ${user_name}`);
+    },
+    "delete" : function(){
+        console.log("deleting user...");
+    }
+}
+// console.log(user.id);
+// console.log(user.name);
+// user.show()
+// user.delete()
+
+//NodeJS think about the scope
+// of functions and arrow functions
+const item = {
+    "id" : 1345,
+    "create" : function(){
+        console.log("create item");
+    },
+    "delete" : function(){
+        console.log(`delete id ${this.id}`); //undefined - descope - arrow function dont know "this". When we are inside a JS object we will always use function
+    }
+}
+
+// item.create()
+item.delete()
+
+// organising into chunks of objects ^^
+
+
+</script>
+
+</body>
+</html>
